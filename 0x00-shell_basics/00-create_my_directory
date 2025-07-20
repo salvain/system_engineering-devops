@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
 
 mkdir my_new_dir
+pwd
 
