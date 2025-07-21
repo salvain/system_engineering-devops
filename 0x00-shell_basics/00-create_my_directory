@@ -1,5 +1,5 @@
 #!/bin/bash
 
-mkdir my_new_dir
+
 pwd
-chmod +x 0-current_working_directory
+
