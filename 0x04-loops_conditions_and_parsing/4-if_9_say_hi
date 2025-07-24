@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#this while loops then on 10th position displays hi 
+
+hi=1
+while [ "$hi" -le 11 ]
+do
+	if [ $hi == 10 ]
+	then
+	echo "Hi"
+	hi= $((hi + 1))
+	elif
+	echo "Best School"
+	hi= $((hi + 1 ))
+done
