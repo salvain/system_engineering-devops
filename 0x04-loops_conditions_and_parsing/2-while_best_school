@@ -2,8 +2,8 @@
 # this while loop is going to loop into 10times
 
 schl=1
-while [ $schl -le 10 ]
-then
+while [ $schl -le 10 ];
+do
 	echo"Best School"
 	schl=$(( $sch l +1 ))
 done
