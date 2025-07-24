@@ -4,11 +4,12 @@
 hi=1
 while [ "$hi" -le 11 ]
 do
-	if [ $hi == 10 ]
+	if [ "$hi" == 10 ]
 	then
 	echo "Hi"
 	hi= $((hi + 1))
 	elif
+	then
 	echo "Best School"
 	hi= $((hi + 1 ))
 	fi
