@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# this while loop is going to loop into 10times
+
+schl=1
+until [ $schl -gt 10 ]
+then
+	echo"Best School"
+	schl=$(( $sch l +1 ))
+done
