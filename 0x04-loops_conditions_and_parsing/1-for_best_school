@@ -1,5 +1,5 @@
 #!/bin/bash
-for e in {1..10};
+for f in {1..10};
 do
   echo "Best School"
 done
