@@ -5,5 +5,5 @@ schl=1
 while [ "$schl" -le 10 ]
 do
 	echo "Best School"
-	schl=$(( $schl + 1 ))
+	schl=$(( schl + 1 ))
 done
