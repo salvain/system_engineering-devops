@@ -11,4 +11,5 @@ do
 	elif
 	echo "Best School"
 	hi= $((hi + 1 ))
+	fi
 done
