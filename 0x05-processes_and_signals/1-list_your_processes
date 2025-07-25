@@ -6,10 +6,8 @@ if ! command -v ps &>/dev/null || ! command -v pstree &>/dev/null; then
   exit 1
 fi
 
-echo "===================== PROCESS LIST ====================="
 echo "USER       PID   %CPU  %MEM   TTY       COMMAND"
 ps -eo user:12,pid,%cpu,%mem,tty,cmd --sort=-%cpu | less
 
-echo
-echo "============== VISUAL PROCESS HIERARCHY ================"
+echo "VISUAL PROCESS HIERARCHY"
 pstree -apu
