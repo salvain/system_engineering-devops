@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Displays all currently running processes on the system
 
-echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
-ps -eo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,command --forest
+echo "USER       PID %CPU %MEM    VSZ   RSS      STAT START   TIME COMMAND"
+ps -eo user,pid,pcpu,pmem,vsz,rss,stat,start,time,command --forest
