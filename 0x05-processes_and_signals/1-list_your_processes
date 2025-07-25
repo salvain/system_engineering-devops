@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
-# Print detailed process list with hierarchy
+# A Bash script that displays all processes with USER, STARTED (hh:mm:ss), and COMMAND
 
-ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest
+echo "USER STARTED COMMAND"
+
+ps -eo user,pid,lstart,cmd --no-headers | while read user pid dow mon day time year cmd; do
+    # Format time to extract hh:mm:ss
+    started_time=$(echo "$time" | cut -d':' -f1-3)
+    echo "$user $started_time $cmd"
+done
