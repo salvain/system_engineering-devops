@@ -1,10 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Displays all currently running processes on the system
-# including those without a TTY, in a user-oriented and hierarchical format.
 
-# Print the header with useful fields
 echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
-
-# Display all processes (-e), in user format (-f), hierarchical (-H),
-# with full command line (-F), and show even processes without a terminal
 ps -eo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,command --forest
