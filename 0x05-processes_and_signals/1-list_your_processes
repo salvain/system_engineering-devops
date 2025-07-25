@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
-# A Bash script that displays all processes with USER, STARTED (hh:mm:ss), and COMMAND
+#!/bin/bash
+# Displays all currently running processes on the system
+# including those without a TTY, in a user-oriented and hierarchical format.
 
-echo "USER STARTED COMMAND"
+# Print the header with useful fields
+echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
 
-ps -eo user,pid,lstart,cmd --no-headers | while read user pid dow mon day time year cmd; do
-    # Format time to extract hh:mm:ss
-    started_time=$(echo "$time" | cut -d':' -f1-3)
-    echo "$user $started_time $cmd"
-done
+# Display all processes (-e), in user format (-f), hierarchical (-H),
+# with full command line (-F), and show even processes without a terminal
+ps -eo user,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,command --forest
