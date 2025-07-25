@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Displays all running processes from all users, including those without a TTY,
 
-ps -e --forest -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,cmd
+ps -e --forest -o user,pid,%cpu,%mem,vsz,rss,tty,stat,lstart,time,cmd
