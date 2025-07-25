@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Display all running processes with user, pid, CPU/mem, memory, tty, status, start, time and command with process hierarchy
 
-ps -e --forest -o user,pid,%cpu,%mem,vsz,rss,tty,stat,lstart,time,cmd
+ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest
