@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
-# Displays all currently running processes on the system
+# Displays all running processes from all users, including those without a TTY,
 
-echo "USER       PID %CPU %MEM    VSZ   RSS      STAT START   TIME COMMAND"
-ps -eo user,pid,pcpu,pmem,vsz,rss,stat,start,time,command --forest
+if ! command -v ps &>/dev/null || ! command -v pstree &>/dev/null; then
+  echo "Required commands 'ps' or 'pstree' are missing."
+  exit 1
+fi
+
+echo "===================== PROCESS LIST ====================="
+echo "USER       PID   %CPU  %MEM   TTY       COMMAND"
+ps -eo user:12,pid,%cpu,%mem,tty,cmd --sort=-%cpu | less
+
+echo
+echo "============== VISUAL PROCESS HIERARCHY ================"
+pstree -apu
