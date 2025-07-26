@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#This script shows loops infinite and beyond after 2 seconds
+
+while true 
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
