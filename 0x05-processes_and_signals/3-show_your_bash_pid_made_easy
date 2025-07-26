@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This script shows PID and name of bash
+
+pgrep -a bash
