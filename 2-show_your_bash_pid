@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#This script display process ID with name and contains the word bash
+# shellcheck disable=SC2009
+
+ps -f | grep bash
