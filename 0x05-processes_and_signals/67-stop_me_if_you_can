@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# 67-stop_me_if_you_can: Sends SIGTERM to 7-highlander process(es).
+
+# Get PIDs of 7-highlander scripts running
+pids=$(pgrep -f "7-highlander")
+
+if [ -z "$pids" ]; then
+  echo "No 7-highlander process found."
+else
+  for pid in $pids; do
+    kill -TERM "$pid"
+  done
+fi

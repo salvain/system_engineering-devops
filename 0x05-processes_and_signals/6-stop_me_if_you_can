@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # This script stops the 4-to_infinity_and_beyond process without using kill or killall
 
-PID=$(ps -ef | pgrep bash '[4]-to_infinity_and_beyond' | awk '{print $2}')
+PID=$(pgrep -f "4-to_infinity_and_beyond")
 
 if [ -n "$PID" ]; then
-  true > "/proc/$PID/fd/0" 2>/dev/null
+  exec 2>/dev/null
+  true > "/proc/$PID/fd/0"
 fi
+
