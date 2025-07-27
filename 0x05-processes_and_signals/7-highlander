@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # 7-highlander: Infinite loop, handles SIGTERM by printing a message and continuing.
 
-trap 'echo "I am invincible!!!"' SIGTERM
+trap 'echo "I am invincible!!!"; echo OK' SIGTERM
 
 while true; do
   echo "To infinity and beyond"
