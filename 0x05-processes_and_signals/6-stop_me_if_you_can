@@ -2,12 +2,10 @@
 # This script stops the 4-to_infinity_and_beyond process without using kill or killall
 
 # shellcheck disable=SC2009
-PID=$(ps -ef | grep "[4]-to_infinity_and_beyond" | awk '{print $2}')
+PID=$(ps -ef | grep '[4]-to_infinity_and_beyond' | awk '{print $2}')
 
 if [ -n "$PID" ]; then
-    # Send signal using /proc interface
-    echo -17 > "/proc/$PID/oom_score_adj" 2>/dev/null
-    # This won't directly kill, so we force termination another way
-    # Overwrite the script being run to cause a crash or make it stop
-    > 4-to_infinity_and_beyond
+  # Terminate process using signal 15 via /proc interface
+  echo "Terminating process $PID without kill or killall..."
+  (exec 2>/dev/null; > "/proc/$PID/fd/0")
 fi
