@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # This script stops the 4-to_infinity_and_beyond process without using kill or killall
 
-# shellcheck disable=SC2009
 PID=$(ps -ef | grep '[4]-to_infinity_and_beyond' | awk '{print $2}')
 
 if [ -n "$PID" ]; then
-  (exec 2>/dev/null; > "/proc/$PID/fd/0")
+  true > "/proc/$PID/fd/0" 2>/dev/null
 fi
