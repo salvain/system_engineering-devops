@@ -5,7 +5,5 @@
 PID=$(ps -ef | grep '[4]-to_infinity_and_beyond' | awk '{print $2}')
 
 if [ -n "$PID" ]; then
-  # Terminate process using signal 15 via /proc interface
-  echo "Terminating process $PID without kill or killall..."
   (exec 2>/dev/null; > "/proc/$PID/fd/0")
 fi
